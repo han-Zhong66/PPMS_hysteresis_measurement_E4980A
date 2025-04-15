@@ -14,7 +14,6 @@ import shutil
 # Prepare for plotting
 matplotlib.use("TkAgg")
 
-
 class MeasurementGUI:
     def __init__(self, root):
         self.root = root
