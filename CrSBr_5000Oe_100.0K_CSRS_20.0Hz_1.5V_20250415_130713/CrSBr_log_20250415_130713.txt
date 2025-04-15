@@ -1,0 +1,414 @@
+Measurement Log - 20250415_130713
+Temperature: 100.0 K
+Max Field: 5000 Oe
+Field Step: 100 Oe
+Field Rate: 100.0 Oe/s
+
+
+Starting measurements...
+Setting field to -5000 Oe... Done
+Measurement: Cs=1.921e-08 F, Rs=4432140.00 Ω
+Setting field to -5000 Oe... Done
+Measurement: Cs=1.922e-08 F, Rs=4425710.00 Ω
+Setting field to -4900 Oe... Done
+Measurement: Cs=1.913e-08 F, Rs=4437330.00 Ω
+Setting field to -4800 Oe... Done
+Measurement: Cs=1.910e-08 F, Rs=4440250.00 Ω
+Setting field to -4700 Oe... Done
+Measurement: Cs=1.917e-08 F, Rs=4432030.00 Ω
+Setting field to -4600 Oe... Done
+Measurement: Cs=1.902e-08 F, Rs=4435200.00 Ω
+Setting field to -4500 Oe... Done
+Measurement: Cs=1.904e-08 F, Rs=4443900.00 Ω
+Setting field to -4400 Oe... Done
+Measurement: Cs=1.911e-08 F, Rs=4439540.00 Ω
+Setting field to -4300 Oe... Done
+Measurement: Cs=1.894e-08 F, Rs=4451620.00 Ω
+Setting field to -4200 Oe... Done
+Measurement: Cs=1.891e-08 F, Rs=4456600.00 Ω
+Setting field to -4100 Oe... Done
+Measurement: Cs=1.893e-08 F, Rs=4457600.00 Ω
+Setting field to -4000 Oe... Done
+Measurement: Cs=1.888e-08 F, Rs=4460040.00 Ω
+Setting field to -3900 Oe... Done
+Measurement: Cs=1.891e-08 F, Rs=4458010.00 Ω
+Setting field to -3800 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4465250.00 Ω
+Setting field to -3700 Oe... Done
+Measurement: Cs=1.886e-08 F, Rs=4462810.00 Ω
+Setting field to -3600 Oe... Done
+Measurement: Cs=1.893e-08 F, Rs=4459810.00 Ω
+Setting field to -3500 Oe... Done
+Measurement: Cs=1.885e-08 F, Rs=4460830.00 Ω
+Setting field to -3400 Oe... Done
+Measurement: Cs=1.889e-08 F, Rs=4463370.00 Ω
+Setting field to -3300 Oe... Done
+Measurement: Cs=1.885e-08 F, Rs=4470960.00 Ω
+Setting field to -3200 Oe... Done
+Measurement: Cs=1.876e-08 F, Rs=4467930.00 Ω
+Setting field to -3100 Oe... Done
+Measurement: Cs=1.874e-08 F, Rs=4476160.00 Ω
+Setting field to -3000 Oe... Done
+Measurement: Cs=1.873e-08 F, Rs=4479510.00 Ω
+Setting field to -2900 Oe... Done
+Measurement: Cs=1.868e-08 F, Rs=4486700.00 Ω
+Setting field to -2800 Oe... Done
+Measurement: Cs=1.869e-08 F, Rs=4483170.00 Ω
+Setting field to -2700 Oe... Done
+Measurement: Cs=1.857e-08 F, Rs=4492330.00 Ω
+Setting field to -2600 Oe... Done
+Measurement: Cs=1.864e-08 F, Rs=4491680.00 Ω
+Setting field to -2500 Oe... Done
+Measurement: Cs=1.851e-08 F, Rs=4503540.00 Ω
+Setting field to -2400 Oe... Done
+Measurement: Cs=1.853e-08 F, Rs=4504710.00 Ω
+Setting field to -2300 Oe... Done
+Measurement: Cs=1.847e-08 F, Rs=4503130.00 Ω
+Setting field to -2200 Oe... Done
+Measurement: Cs=1.844e-08 F, Rs=4506270.00 Ω
+Setting field to -2100 Oe... Done
+Measurement: Cs=1.841e-08 F, Rs=4516330.00 Ω
+Setting field to -2000 Oe... Done
+Measurement: Cs=1.842e-08 F, Rs=4516410.00 Ω
+Setting field to -1900 Oe... Done
+Measurement: Cs=1.847e-08 F, Rs=4520590.00 Ω
+Setting field to -1800 Oe... Done
+Measurement: Cs=1.838e-08 F, Rs=4527020.00 Ω
+Setting field to -1700 Oe... Done
+Measurement: Cs=1.830e-08 F, Rs=4526930.00 Ω
+Setting field to -1600 Oe... Done
+Measurement: Cs=1.825e-08 F, Rs=4535800.00 Ω
+Setting field to -1500 Oe... Done
+Measurement: Cs=1.828e-08 F, Rs=4532310.00 Ω
+Setting field to -1400 Oe... Done
+Measurement: Cs=1.824e-08 F, Rs=4536430.00 Ω
+Setting field to -1300 Oe... Done
+Measurement: Cs=1.818e-08 F, Rs=4539120.00 Ω
+Setting field to -1200 Oe... Done
+Measurement: Cs=1.814e-08 F, Rs=4550100.00 Ω
+Setting field to -1100 Oe... Done
+Measurement: Cs=1.812e-08 F, Rs=4551750.00 Ω
+Setting field to -1000 Oe... Done
+Measurement: Cs=1.813e-08 F, Rs=4543100.00 Ω
+Setting field to -900 Oe... Done
+Measurement: Cs=1.810e-08 F, Rs=4552780.00 Ω
+Setting field to -800 Oe... Done
+Measurement: Cs=1.806e-08 F, Rs=4556630.00 Ω
+Setting field to -700 Oe... Done
+Measurement: Cs=1.800e-08 F, Rs=4561790.00 Ω
+Setting field to -600 Oe... Done
+Measurement: Cs=1.810e-08 F, Rs=4562620.00 Ω
+Setting field to -500 Oe... Done
+Measurement: Cs=1.797e-08 F, Rs=4562550.00 Ω
+Setting field to -400 Oe... Done
+Measurement: Cs=1.804e-08 F, Rs=4560000.00 Ω
+Setting field to -300 Oe... Done
+Measurement: Cs=1.800e-08 F, Rs=4563530.00 Ω
+Setting field to -200 Oe... Done
+Measurement: Cs=1.808e-08 F, Rs=4554990.00 Ω
+Setting field to -100 Oe... Done
+Measurement: Cs=1.790e-08 F, Rs=4567260.00 Ω
+Setting field to 0 Oe... Done
+Measurement: Cs=1.807e-08 F, Rs=4558830.00 Ω
+Setting field to 100 Oe... Done
+Measurement: Cs=1.796e-08 F, Rs=4568450.00 Ω
+Setting field to 200 Oe... Done
+Measurement: Cs=1.788e-08 F, Rs=4576650.00 Ω
+Setting field to 300 Oe... Done
+Measurement: Cs=1.803e-08 F, Rs=4562950.00 Ω
+Setting field to 400 Oe... Done
+Measurement: Cs=1.805e-08 F, Rs=4560940.00 Ω
+Setting field to 500 Oe... Done
+Measurement: Cs=1.796e-08 F, Rs=4564240.00 Ω
+Setting field to 600 Oe... Done
+Measurement: Cs=1.811e-08 F, Rs=4560780.00 Ω
+Setting field to 700 Oe... Done
+Measurement: Cs=1.799e-08 F, Rs=4558970.00 Ω
+Setting field to 800 Oe... Done
+Measurement: Cs=1.811e-08 F, Rs=4549540.00 Ω
+Setting field to 900 Oe... Done
+Measurement: Cs=1.800e-08 F, Rs=4556750.00 Ω
+Setting field to 1000 Oe... Done
+Measurement: Cs=1.813e-08 F, Rs=4547300.00 Ω
+Setting field to 1100 Oe... Done
+Measurement: Cs=1.817e-08 F, Rs=4543670.00 Ω
+Setting field to 1200 Oe... Done
+Measurement: Cs=1.821e-08 F, Rs=4539710.00 Ω
+Setting field to 1300 Oe... Done
+Measurement: Cs=1.828e-08 F, Rs=4540980.00 Ω
+Setting field to 1400 Oe... Done
+Measurement: Cs=1.816e-08 F, Rs=4536380.00 Ω
+Setting field to 1500 Oe... Done
+Measurement: Cs=1.829e-08 F, Rs=4536120.00 Ω
+Setting field to 1600 Oe... Done
+Measurement: Cs=1.825e-08 F, Rs=4532980.00 Ω
+Setting field to 1700 Oe... Done
+Measurement: Cs=1.829e-08 F, Rs=4533770.00 Ω
+Setting field to 1800 Oe... Done
+Measurement: Cs=1.834e-08 F, Rs=4522670.00 Ω
+Setting field to 1900 Oe... Done
+Measurement: Cs=1.838e-08 F, Rs=4516190.00 Ω
+Setting field to 2000 Oe... Done
+Measurement: Cs=1.839e-08 F, Rs=4514140.00 Ω
+Setting field to 2100 Oe... Done
+Measurement: Cs=1.840e-08 F, Rs=4513340.00 Ω
+Setting field to 2200 Oe... Done
+Measurement: Cs=1.850e-08 F, Rs=4505200.00 Ω
+Setting field to 2300 Oe... Done
+Measurement: Cs=1.849e-08 F, Rs=4504080.00 Ω
+Setting field to 2400 Oe... Done
+Measurement: Cs=1.850e-08 F, Rs=4505110.00 Ω
+Setting field to 2500 Oe... Done
+Measurement: Cs=1.853e-08 F, Rs=4500590.00 Ω
+Setting field to 2600 Oe... Done
+Measurement: Cs=1.853e-08 F, Rs=4500810.00 Ω
+Setting field to 2700 Oe... Done
+Measurement: Cs=1.867e-08 F, Rs=4488050.00 Ω
+Setting field to 2800 Oe... Done
+Measurement: Cs=1.853e-08 F, Rs=4497930.00 Ω
+Setting field to 2900 Oe... Done
+Measurement: Cs=1.861e-08 F, Rs=4487880.00 Ω
+Setting field to 3000 Oe... Done
+Measurement: Cs=1.856e-08 F, Rs=4488420.00 Ω
+Setting field to 3100 Oe... Done
+Measurement: Cs=1.878e-08 F, Rs=4476580.00 Ω
+Setting field to 3200 Oe... Done
+Measurement: Cs=1.868e-08 F, Rs=4484210.00 Ω
+Setting field to 3300 Oe... Done
+Measurement: Cs=1.872e-08 F, Rs=4477660.00 Ω
+Setting field to 3400 Oe... Done
+Measurement: Cs=1.876e-08 F, Rs=4473950.00 Ω
+Setting field to 3500 Oe... Done
+Measurement: Cs=1.882e-08 F, Rs=4470640.00 Ω
+Setting field to 3600 Oe... Done
+Measurement: Cs=1.876e-08 F, Rs=4467090.00 Ω
+Setting field to 3700 Oe... Done
+Measurement: Cs=1.883e-08 F, Rs=4467880.00 Ω
+Setting field to 3800 Oe... Done
+Measurement: Cs=1.897e-08 F, Rs=4458190.00 Ω
+Setting field to 3900 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4464640.00 Ω
+Setting field to 4000 Oe... Done
+Measurement: Cs=1.891e-08 F, Rs=4458520.00 Ω
+Setting field to 4100 Oe... Done
+Measurement: Cs=1.900e-08 F, Rs=4443010.00 Ω
+Setting field to 4200 Oe... Done
+Measurement: Cs=1.896e-08 F, Rs=4459200.00 Ω
+Setting field to 4300 Oe... Done
+Measurement: Cs=1.893e-08 F, Rs=4456490.00 Ω
+Setting field to 4400 Oe... Done
+Measurement: Cs=1.904e-08 F, Rs=4449310.00 Ω
+Setting field to 4500 Oe... Done
+Measurement: Cs=1.903e-08 F, Rs=4440160.00 Ω
+Setting field to 4600 Oe... Done
+Measurement: Cs=1.907e-08 F, Rs=4442410.00 Ω
+Setting field to 4700 Oe... Done
+Measurement: Cs=1.908e-08 F, Rs=4438540.00 Ω
+Setting field to 4800 Oe... Done
+Measurement: Cs=1.906e-08 F, Rs=4443850.00 Ω
+Setting field to 4900 Oe... Done
+Measurement: Cs=1.906e-08 F, Rs=4442630.00 Ω
+Setting field to 5000 Oe... Done
+Measurement: Cs=1.912e-08 F, Rs=4439280.00 Ω
+Setting field to 5000 Oe... Done
+Measurement: Cs=1.896e-08 F, Rs=4445880.00 Ω
+Setting field to 4900 Oe... Done
+Measurement: Cs=1.911e-08 F, Rs=4432370.00 Ω
+Setting field to 4800 Oe... Done
+Measurement: Cs=1.931e-08 F, Rs=4425090.00 Ω
+Setting field to 4700 Oe... Done
+Measurement: Cs=1.904e-08 F, Rs=4436050.00 Ω
+Setting field to 4600 Oe... Done
+Measurement: Cs=1.913e-08 F, Rs=4439530.00 Ω
+Setting field to 4500 Oe... Done
+Measurement: Cs=1.906e-08 F, Rs=4443450.00 Ω
+Setting field to 4400 Oe... Done
+Measurement: Cs=1.911e-08 F, Rs=4439680.00 Ω
+Setting field to 4300 Oe... Done
+Measurement: Cs=1.905e-08 F, Rs=4441870.00 Ω
+Setting field to 4200 Oe... Done
+Measurement: Cs=1.903e-08 F, Rs=4445580.00 Ω
+Setting field to 4100 Oe... Done
+Measurement: Cs=1.903e-08 F, Rs=4445060.00 Ω
+Setting field to 4000 Oe... Done
+Measurement: Cs=1.900e-08 F, Rs=4451310.00 Ω
+Setting field to 3900 Oe... Done
+Measurement: Cs=1.900e-08 F, Rs=4451920.00 Ω
+Setting field to 3800 Oe... Done
+Measurement: Cs=1.898e-08 F, Rs=4451960.00 Ω
+Setting field to 3700 Oe... Done
+Measurement: Cs=1.898e-08 F, Rs=4448260.00 Ω
+Setting field to 3600 Oe... Done
+Measurement: Cs=1.890e-08 F, Rs=4462440.00 Ω
+Setting field to 3500 Oe... Done
+Measurement: Cs=1.891e-08 F, Rs=4458130.00 Ω
+Setting field to 3400 Oe... Done
+Measurement: Cs=1.885e-08 F, Rs=4467650.00 Ω
+Setting field to 3300 Oe... Done
+Measurement: Cs=1.879e-08 F, Rs=4467390.00 Ω
+Setting field to 3200 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4467890.00 Ω
+Setting field to 3100 Oe... Done
+Measurement: Cs=1.887e-08 F, Rs=4465490.00 Ω
+Setting field to 3000 Oe... Done
+Measurement: Cs=1.882e-08 F, Rs=4473520.00 Ω
+Setting field to 2900 Oe... Done
+Measurement: Cs=1.864e-08 F, Rs=4481230.00 Ω
+Setting field to 2800 Oe... Done
+Measurement: Cs=1.877e-08 F, Rs=4472120.00 Ω
+Setting field to 2700 Oe... Done
+Measurement: Cs=1.874e-08 F, Rs=4484450.00 Ω
+Setting field to 2600 Oe... Done
+Measurement: Cs=1.864e-08 F, Rs=4491710.00 Ω
+Setting field to 2500 Oe... Done
+Measurement: Cs=1.865e-08 F, Rs=4494160.00 Ω
+Setting field to 2400 Oe... Done
+Measurement: Cs=1.852e-08 F, Rs=4501200.00 Ω
+Setting field to 2300 Oe... Done
+Measurement: Cs=1.847e-08 F, Rs=4507680.00 Ω
+Setting field to 2200 Oe... Done
+Measurement: Cs=1.836e-08 F, Rs=4513950.00 Ω
+Setting field to 2100 Oe... Done
+Measurement: Cs=1.854e-08 F, Rs=4517410.00 Ω
+Setting field to 2000 Oe... Done
+Measurement: Cs=1.850e-08 F, Rs=4511370.00 Ω
+Setting field to 1900 Oe... Done
+Measurement: Cs=1.839e-08 F, Rs=4523830.00 Ω
+Setting field to 1800 Oe... Done
+Measurement: Cs=1.832e-08 F, Rs=4521900.00 Ω
+Setting field to 1700 Oe... Done
+Measurement: Cs=1.833e-08 F, Rs=4525770.00 Ω
+Setting field to 1600 Oe... Done
+Measurement: Cs=1.825e-08 F, Rs=4532030.00 Ω
+Setting field to 1500 Oe... Done
+Measurement: Cs=1.833e-08 F, Rs=4534640.00 Ω
+Setting field to 1400 Oe... Done
+Measurement: Cs=1.823e-08 F, Rs=4538370.00 Ω
+Setting field to 1300 Oe... Done
+Measurement: Cs=1.810e-08 F, Rs=4548170.00 Ω
+Setting field to 1200 Oe... Done
+Measurement: Cs=1.815e-08 F, Rs=4545860.00 Ω
+Setting field to 1100 Oe... Done
+Measurement: Cs=1.810e-08 F, Rs=4551620.00 Ω
+Setting field to 1000 Oe... Done
+Measurement: Cs=1.813e-08 F, Rs=4553210.00 Ω
+Setting field to 900 Oe... Done
+Measurement: Cs=1.819e-08 F, Rs=4543200.00 Ω
+Setting field to 800 Oe... Done
+Measurement: Cs=1.809e-08 F, Rs=4556010.00 Ω
+Setting field to 700 Oe... Done
+Measurement: Cs=1.793e-08 F, Rs=4558190.00 Ω
+Setting field to 600 Oe... Done
+Measurement: Cs=1.797e-08 F, Rs=4558020.00 Ω
+Setting field to 500 Oe... Done
+Measurement: Cs=1.816e-08 F, Rs=4550810.00 Ω
+Setting field to 400 Oe... Done
+Measurement: Cs=1.810e-08 F, Rs=4556120.00 Ω
+Setting field to 300 Oe... Done
+Measurement: Cs=1.806e-08 F, Rs=4556950.00 Ω
+Setting field to 200 Oe... Done
+Measurement: Cs=1.801e-08 F, Rs=4561670.00 Ω
+Setting field to 100 Oe... Done
+Measurement: Cs=1.803e-08 F, Rs=4561580.00 Ω
+Setting field to 0 Oe... Done
+Measurement: Cs=1.804e-08 F, Rs=4559010.00 Ω
+Setting field to -100 Oe... Done
+Measurement: Cs=1.801e-08 F, Rs=4560690.00 Ω
+Setting field to -200 Oe... Done
+Measurement: Cs=1.805e-08 F, Rs=4566310.00 Ω
+Setting field to -300 Oe... Done
+Measurement: Cs=1.804e-08 F, Rs=4567910.00 Ω
+Setting field to -400 Oe... Done
+Measurement: Cs=1.816e-08 F, Rs=4556260.00 Ω
+Setting field to -500 Oe... Done
+Measurement: Cs=1.810e-08 F, Rs=4555630.00 Ω
+Setting field to -600 Oe... Done
+Measurement: Cs=1.804e-08 F, Rs=4564190.00 Ω
+Setting field to -700 Oe... Done
+Measurement: Cs=1.807e-08 F, Rs=4557230.00 Ω
+Setting field to -800 Oe... Done
+Measurement: Cs=1.806e-08 F, Rs=4558170.00 Ω
+Setting field to -900 Oe... Done
+Measurement: Cs=1.800e-08 F, Rs=4545760.00 Ω
+Setting field to -1000 Oe... Done
+Measurement: Cs=1.821e-08 F, Rs=4539560.00 Ω
+Setting field to -1100 Oe... Done
+Measurement: Cs=1.823e-08 F, Rs=4535870.00 Ω
+Setting field to -1200 Oe... Done
+Measurement: Cs=1.820e-08 F, Rs=4543150.00 Ω
+Setting field to -1300 Oe... Done
+Measurement: Cs=1.825e-08 F, Rs=4530160.00 Ω
+Setting field to -1400 Oe... Done
+Measurement: Cs=1.822e-08 F, Rs=4531130.00 Ω
+Setting field to -1500 Oe... Done
+Measurement: Cs=1.841e-08 F, Rs=4517260.00 Ω
+Setting field to -1600 Oe... Done
+Measurement: Cs=1.839e-08 F, Rs=4519610.00 Ω
+Setting field to -1700 Oe... Done
+Measurement: Cs=1.840e-08 F, Rs=4517530.00 Ω
+Setting field to -1800 Oe... Done
+Measurement: Cs=1.837e-08 F, Rs=4512320.00 Ω
+Setting field to -1900 Oe... Done
+Measurement: Cs=1.852e-08 F, Rs=4502630.00 Ω
+Setting field to -2000 Oe... Done
+Measurement: Cs=1.863e-08 F, Rs=4500450.00 Ω
+Setting field to -2100 Oe... Done
+Measurement: Cs=1.850e-08 F, Rs=4501020.00 Ω
+Setting field to -2200 Oe... Done
+Measurement: Cs=1.856e-08 F, Rs=4501690.00 Ω
+Setting field to -2300 Oe... Done
+Measurement: Cs=1.863e-08 F, Rs=4495070.00 Ω
+Setting field to -2400 Oe... Done
+Measurement: Cs=1.858e-08 F, Rs=4488940.00 Ω
+Setting field to -2500 Oe... Done
+Measurement: Cs=1.860e-08 F, Rs=4489280.00 Ω
+Setting field to -2600 Oe... Done
+Measurement: Cs=1.876e-08 F, Rs=4483530.00 Ω
+Setting field to -2700 Oe... Done
+Measurement: Cs=1.865e-08 F, Rs=4486150.00 Ω
+Setting field to -2800 Oe... Done
+Measurement: Cs=1.862e-08 F, Rs=4484190.00 Ω
+Setting field to -2900 Oe... Done
+Measurement: Cs=1.880e-08 F, Rs=4470090.00 Ω
+Setting field to -3000 Oe... Done
+Measurement: Cs=1.873e-08 F, Rs=4477370.00 Ω
+Setting field to -3100 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4468560.00 Ω
+Setting field to -3200 Oe... Done
+Measurement: Cs=1.882e-08 F, Rs=4469990.00 Ω
+Setting field to -3300 Oe... Done
+Measurement: Cs=1.888e-08 F, Rs=4462220.00 Ω
+Setting field to -3400 Oe... Done
+Measurement: Cs=1.893e-08 F, Rs=4468820.00 Ω
+Setting field to -3500 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4466810.00 Ω
+Setting field to -3600 Oe... Done
+Measurement: Cs=1.880e-08 F, Rs=4467690.00 Ω
+Setting field to -3700 Oe... Done
+Measurement: Cs=1.898e-08 F, Rs=4461480.00 Ω
+Setting field to -3800 Oe... Done
+Measurement: Cs=1.885e-08 F, Rs=4462770.00 Ω
+Setting field to -3900 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4468200.00 Ω
+Setting field to -4000 Oe... Done
+Measurement: Cs=1.884e-08 F, Rs=4462020.00 Ω
+Setting field to -4100 Oe... Done
+Measurement: Cs=1.887e-08 F, Rs=4463040.00 Ω
+Setting field to -4200 Oe... Done
+Measurement: Cs=1.902e-08 F, Rs=4450590.00 Ω
+Setting field to -4300 Oe... Done
+Measurement: Cs=1.898e-08 F, Rs=4451370.00 Ω
+Setting field to -4400 Oe... Done
+Measurement: Cs=1.892e-08 F, Rs=4449380.00 Ω
+Setting field to -4500 Oe... Done
+Measurement: Cs=1.905e-08 F, Rs=4445030.00 Ω
+Setting field to -4600 Oe... Done
+Measurement: Cs=1.907e-08 F, Rs=4440930.00 Ω
+Setting field to -4700 Oe... Done
+Measurement: Cs=1.909e-08 F, Rs=4438980.00 Ω
+Setting field to -4800 Oe... Done
+Measurement: Cs=1.888e-08 F, Rs=4439100.00 Ω
+Setting field to -4900 Oe... Done
+Measurement: Cs=1.898e-08 F, Rs=4443580.00 Ω
+Setting field to -5000 Oe... Done
+Measurement: Cs=1.909e-08 F, Rs=4438140.00 Ω

@@ -1,0 +1,12 @@
+Measurement Log - 20250415_123255
+Temperature: 100.0 K
+Max Field: 5000 Oe
+Field Step: 100 Oe
+Field Rate: 100.0 Oe/s
+
+
+Starting instrument cleanup...
+
+Data saved to: /Users/zhonghan/PycharmProjects/GUI/CrSBr_5000Oe_100.0K_CSRS_20.0Hz_1.5V_20250415_123255/CrSBr_5000Oe_100.0K_CSRS_20.0Hz_1.5V_20250415_123255.dat
+Plot saved to: /Users/zhonghan/PycharmProjects/GUI/CrSBr_5000Oe_100.0K_CSRS_20.0Hz_1.5V_20250415_123255/CrSBr_5000Oe_100.0K_CSRS_20.0Hz_1.5V_20250415_123255.png
+Measurement completed at 2025-04-15 12:49:41.168580

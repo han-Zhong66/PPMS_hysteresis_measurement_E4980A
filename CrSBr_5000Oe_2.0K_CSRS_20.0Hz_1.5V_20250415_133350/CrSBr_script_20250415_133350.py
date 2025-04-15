@@ -40,17 +40,10 @@ class MeasurementGUI:
         self.max_field = tk.StringVar(value="5000")
         self.magnetic_step = tk.StringVar(value="100")
         self.magnetic_rate = tk.StringVar(value="100")
-        # Temperature parameters
-        self.temp_mode = tk.StringVar(value="single")  # For mode selection
-        self.temp_list = tk.StringVar(value="100,200,300")  # For list mode
-        self.temp_start = tk.StringVar(value="100")  # For sweep start
-        self.temp_end = tk.StringVar(value="300")  # For sweep end
-        self.temp_step = tk.StringVar(value="50")  # For sweep step
         self.target_temp = tk.StringVar(value="100")
-        self.temp_rate = tk.StringVar(value="10")
+        self.temp_rate = tk.StringVar(value="20")
         self.stabilize_time = tk.StringVar(value="10")
         self.material = tk.StringVar(value="CrSBr")
-        self.auto_folder = tk.BooleanVar(value=True)
 
         # Create GUI sections
         self.create_host_output_frame()
@@ -63,20 +56,13 @@ class MeasurementGUI:
         # Auto-detect LCR meters on startup
         self.detect_lcr()
 
-        #Set up trace callbacks
-        self.material.trace_add("write", self._handle_parameter_change)
+        # Set up trace callbacks for all filename components
+        self.material.trace_add("write", self._handle_material_change)
         self.max_field.trace_add("write", self._handle_parameter_change)
         self.target_temp.trace_add("write", self._handle_parameter_change)
         self.lcr_mode.trace_add("write", self._handle_parameter_change)
         self.lcr_freq.trace_add("write", self._handle_parameter_change)
         self.lcr_volt.trace_add("write", self._handle_parameter_change)
-        self.temp_mode.trace_add("write", self._handle_parameter_change)
-        self.temp_list.trace_add("write", self._handle_parameter_change)
-        self.temp_start.trace_add("write", self._handle_parameter_change)
-        self.temp_end.trace_add("write", self._handle_parameter_change)
-        self.temp_step.trace_add("write", self._handle_parameter_change)
-        self.data_file.trace_add("write", lambda *_: self._track_custom_part("data"))
-        self.plot_file.trace_add("write", lambda *_: self._track_custom_part("plot"))
 
     def create_magnetic_field_frame(self):
         frame = ttk.LabelFrame(self.root, text="Magnetic Field Parameters")
@@ -88,8 +74,6 @@ class MeasurementGUI:
         ttk.Entry(frame, textvariable=self.magnetic_step).grid(row=1, column=1)
         ttk.Label(frame, text="Rate (Oe/s):").grid(row=2, column=0)
         ttk.Entry(frame, textvariable=self.magnetic_rate).grid(row=2, column=1)
-        ttk.Label(frame, text="Settle Time (s):").grid(row=3, column=0)
-        ttk.Entry(frame, textvariable=self.settle_time_magnetic).grid(row=3, column=1)
 
     def create_temperature_frame(self):
         frame = ttk.LabelFrame(self.root, text="Temperature Parameters")
@@ -137,7 +121,7 @@ class MeasurementGUI:
 
         # Common parameters
         ttk.Label(frame, text="Rate (K/min):").grid(row=2, column=0)
-        self.temp_rate = tk.StringVar(value="10")
+        self.temp_rate = tk.StringVar(value="20")
         ttk.Entry(frame, textvariable=self.temp_rate).grid(row=2, column=1)
 
         ttk.Label(frame, text="Stabilize (s):").grid(row=2, column=2)
@@ -160,6 +144,16 @@ class MeasurementGUI:
             self.temp_list_frame.grid()
         elif mode == "sweep":
             self.temp_sweep_frame.grid()
+    # def create_temperature_frame(self):
+    #     frame = ttk.LabelFrame(self.root, text="Temperature Parameters")
+    #     frame.grid(row=1, column=0, padx=10, pady=5, sticky="ew")
+    #
+    #     ttk.Label(frame, text="Target Temp (K):").grid(row=0, column=0)
+    #     ttk.Entry(frame, textvariable=self.target_temp).grid(row=0, column=1)
+    #     ttk.Label(frame, text="Rate (K/min):").grid(row=1, column=0)
+    #     ttk.Entry(frame, textvariable=self.temp_rate).grid(row=1, column=1)
+    #     ttk.Label(frame, text="Stabilize (s):").grid(row=2, column=0)
+    #     ttk.Entry(frame, textvariable=self.stabilize_time).grid(row=2, column=1)
 
     def create_host_output_frame(self):
         frame = ttk.LabelFrame(self.root, text="Host and Output")
@@ -170,13 +164,13 @@ class MeasurementGUI:
         self.folder_path = tk.StringVar(value=os.getcwd())
         self.data_file = tk.StringVar()
         self.plot_file = tk.StringVar()
-        self.folder_name = tk.StringVar()  # New variable for folder name display
 
         # Generate timestamp only once at startup
         self._timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self._current_material = self.material.get() or "material"
 
-        self._update_filenames_and_folder()
+        # Set initial filenames
+        self._update_filenames()
 
         # Create widgets
         ttk.Label(frame, text="Material:").grid(row=0, column=0, sticky="w")
@@ -185,74 +179,34 @@ class MeasurementGUI:
         ttk.Label(frame, text="QD Server IP:").grid(row=1, column=0, sticky="w")
         ttk.Entry(frame, textvariable=self.host_ip).grid(row=1, column=1, sticky="ew")
 
-        ttk.Label(frame, text="Folder Path:").grid(row=2, column=0, sticky="w")
+        ttk.Label(frame, text="Folder:").grid(row=2, column=0, sticky="w")
         ttk.Entry(frame, textvariable=self.folder_path).grid(row=2, column=1, sticky="ew")
         ttk.Button(frame, text="Browse", command=self.browse_folder).grid(row=2, column=2)
 
-        # Create a longer entry widget
-        ttk.Label(frame, text="Create Folder Name:").grid(row=3, column=0, sticky="w")
-        ttk.Entry(frame, textvariable=self.folder_name,width=60).grid(row=3, column=1, sticky="ew")
+        ttk.Label(frame, text="Data File:").grid(row=3, column=0, sticky="w")
+        ttk.Entry(frame, textvariable=self.data_file).grid(row=3, column=1, sticky="ew")
 
-        # Auto/manual toggle
-        ttk.Checkbutton(frame, text="Auto", variable=self.auto_folder, command=self.toggle_folder_naming).grid(row=3, column=2, sticky="ew")
-
-        ttk.Label(frame, text="Data File:").grid(row=4, column=0, sticky="w")
-        ttk.Entry(frame, textvariable=self.data_file).grid(row=4, column=1, sticky="ew")
-
-        ttk.Label(frame, text="Plot File:").grid(row=5, column=0, sticky="w")
-        ttk.Entry(frame, textvariable=self.plot_file).grid(row=5, column=1, sticky="ew")
-
-        # # Add folder name display
-        # ttk.Label(frame, text="Folder Name:").grid(row=3, column=0, sticky="w")
-        # ttk.Label(frame, textvariable=self.folder_name, relief="sunken", padding=2).grid(row=3, column=1, sticky="ew")
-        #
-        # ttk.Label(frame, text="Data File:").grid(row=4, column=0, sticky="w")
-        # ttk.Entry(frame, textvariable=self.data_file).grid(row=4, column=1, sticky="ew")
-        #
-        # ttk.Label(frame, text="Plot File:").grid(row=5, column=0, sticky="w")
-        # ttk.Entry(frame, textvariable=self.plot_file).grid(row=5, column=1, sticky="ew")
+        ttk.Label(frame, text="Plot File:").grid(row=4, column=0, sticky="w")
+        ttk.Entry(frame, textvariable=self.plot_file).grid(row=4, column=1, sticky="ew")
 
         # Set up trace callbacks
-        self.material.trace_add("write", self._handle_parameter_change)
+        self.material.trace_add("write", self._handle_material_change)
         self.max_field.trace_add("write", self._handle_parameter_change)
         self.target_temp.trace_add("write", self._handle_parameter_change)
-        self.lcr_mode.trace_add("write", self._handle_parameter_change)
-        self.lcr_freq.trace_add("write", self._handle_parameter_change)
-        self.lcr_volt.trace_add("write", self._handle_parameter_change)
-        self.temp_mode.trace_add("write", self._handle_parameter_change)
-        self.temp_list.trace_add("write", self._handle_parameter_change)
-        self.temp_start.trace_add("write", self._handle_parameter_change)
-        self.temp_end.trace_add("write", self._handle_parameter_change)
-        self.temp_step.trace_add("write", self._handle_parameter_change)
         self.data_file.trace_add("write", lambda *_: self._track_custom_part("data"))
         self.plot_file.trace_add("write", lambda *_: self._track_custom_part("plot"))
 
-    # def _handle_material_change(self, *args):
-    #     """Update filenames when material changes"""
-    #     new_material = self.material.get()
-    #     if not new_material or new_material == self._current_material:
-    #         return
-    #
-    #     self._current_material = new_material
-    #     self._update_filenames()
-    def toggle_folder_naming(self):
-        """Toggle between automatic and manual folder naming"""
-        if self.auto_folder.get():
-            # Switch to auto mode - regenerate folder name
-            self._update_filenames_and_folder()
-        else:
-            # Switch to manual mode - keep current name
-            pass
+    def _handle_material_change(self, *args):
+        """Update filenames when material changes"""
+        new_material = self.material.get()
+        if not new_material or new_material == self._current_material:
+            return
 
-    def _handle_folder_name_change(self, *args):
-        """Handle manual changes to folder name"""
-        if not self.auto_folder.get():
-            # User is manually editing the folder name
-            self._auto_folder_name = False
+        self._current_material = new_material
+        self._update_filenames()
 
     def _handle_parameter_change(self, *args):
-        """Update filenames when any parameter changes"""
-        self._update_filenames_and_folder()
+        """Update filenames when field or temperature changes"""
         self._update_filenames()
 
     def _track_custom_part(self, file_type):
@@ -277,66 +231,14 @@ class MeasurementGUI:
     def _generate_base_name(self):
         """Generate the base filename with current parameters"""
         try:
-            material = self.material.get() or "material"
             field = int(self.max_field.get())
             temp = float(self.target_temp.get())
             mode = self.lcr_mode.get()
             freq = float(self.lcr_freq.get())
             volt = float(self.lcr_volt.get())
-            temp_mode = self.temp_mode.get()
-
-            if temp_mode == "single":
-                return f"{material}_{field}Oe_{temp}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
-            elif temp_mode == "list":
-                temp_points = [t.strip() for t in self.temp_list.get().split(",")]
-                return f"{material}_{field}Oe_temp_list_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
-            elif temp_mode == "sweep":
-                start = float(self.temp_start.get())
-                end = float(self.temp_end.get())
-                step = float(self.temp_step.get())
-                return f"{material}_{field}Oe_temp_sweep_{start}_{end}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
-
+            return f"{self._current_material}_{field}Oe_{temp}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
         except (ValueError, AttributeError):
-            return f"{material}_{self._timestamp}"
-
-    def _generate_folder_name(self):
-        """Generate the folder name with current parameters"""
-        try:
-            material = self.material.get() or "material"
-            max_field = int(self.max_field.get())
-            mode = self.lcr_mode.get()
-            freq = float(self.lcr_freq.get())
-            volt = float(self.lcr_volt.get())
-            temp_mode = self.temp_mode.get()
-
-            if temp_mode == "single":
-                temp = float(self.target_temp.get())
-                return f"{material}_{max_field}Oe_temp_{temp_mode}_{temp}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
-            elif temp_mode == "list":
-                temp_points = [t.strip() for t in self.temp_list.get().split(",")]
-                return f"{material}_{max_field}Oe_temp_{temp_mode}_{'_'.join(temp_points)}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
-            elif temp_mode == "sweep":
-                start = float(self.temp_start.get())
-                end = float(self.temp_end.get())
-                step = float(self.temp_step.get())
-                return f"{material}_{max_field}Oe_temp_{temp_mode}_{start}K_{end}K_{step}Kstep_{mode}_{freq}Hz_{volt}V_{self._timestamp}"
-        except (ValueError, AttributeError):
-            return f"{self.material.get() or 'material'}_{self._timestamp}"
-
-    def _update_filenames_and_folder(self):
-        """Update both filename displays and folder name using current components"""
-        base = self._generate_base_name()
-        # Only update folder name if in auto mode
-        if self.auto_folder.get():
-            self.folder_name.set(self._generate_folder_name())
-
-        # For data file
-        if not hasattr(self, '_data_suffix') or not self._data_suffix.startswith("_"):
-            self.data_file.set(f"{base}.dat")
-
-        # For plot file
-        if not hasattr(self, '_plot_suffix') or not self._plot_suffix.startswith("_"):
-            self.plot_file.set(f"{base}.png")
+            return f"{self._current_material}_{self._timestamp}"
 
     def _update_filenames(self):
         """Update both filename displays using current components"""
@@ -553,6 +455,13 @@ class MeasurementGUI:
         try:
             with mpv.Client(host=host) as client:
                 try:
+                    # Write log file header
+                    with open(logfile, 'w') as lf:
+                        lf.write(f"Measurement Log - {self._timestamp}\n")
+                        lf.write(f"Temperature: {temp} K\n")
+                        lf.write(f"Max Field: {max_field} Oe\n")
+                        lf.write(f"Field Step: {step} Oe\n")
+                        lf.write(f"Field Rate: {rate} Oe/s\n\n")
 
                     print("Connected to MultiVu.")
 
@@ -596,9 +505,9 @@ class MeasurementGUI:
                         messagebox.showerror("LCR Error", f"Failed to configure LCR:\n{str(e)}")
                         return
 
-                    # --- Temperature Setup ---
+                    # --- Temperature Set ---
+                    # Get temperature parameters based on mode
                     temp_mode = self.temp_mode.get()
-                    material = self.material.get() or "material"
 
                     if temp_mode == "single":
                         temp_points = [float(self.target_temp.get())]
@@ -607,109 +516,49 @@ class MeasurementGUI:
                     elif temp_mode == "sweep":
                         start = float(self.temp_start.get())
                         end = float(self.temp_end.get())
-                        step_size = float(self.temp_step.get())
-                        if step == 0:
-                            raise ValueError("Temperature step cannot be zero")
-                        if (start < end and step < 0) or (start > end and step > 0):
-                            raise ValueError("Step direction doesn't match start/end temperatures")
-
+                        step = float(self.temp_step.get())
                         if start < end:
-                            temp_points = list(np.arange(start, end + step_size / 2, step_size))
+                            temp_points = list(np.arange(start, end + step / 2, step))
                         else:
-                            temp_points = list(np.arange(start, end - step_size / 2, -step_size))
+                            temp_points = list(np.arange(start, end - step / 2, -step))
 
-                    # Create session folder
-                    # if temp_mode == "single":
-                    #     session_folder = os.path.join(folder,
-                    #                                   f"{material}_{max_field}Oe_temp_{temp_mode}_{temp_points[0]}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}")
-                    # elif temp_mode == "list":
-                    #     session_folder = os.path.join(folder,
-                    #                                   f"{material}_{max_field}Oe_temp_{temp_mode}_{'_'.join(map(str, temp_points))}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}")
-                    # elif temp_mode == "sweep":
-                    #     session_folder = os.path.join(folder,
-                    #                                   f"{material}_{max_field}Oe_temp_{temp_mode}_{start}K_{end}K_{step_size}Kstep_{mode}_{freq}Hz_{volt}V_{self._timestamp}")
-                    # Use either auto-generated or manual folder name
-                    if self.auto_folder.get():
-                        folder_name = self._generate_folder_name()
-                    else:
-                        folder_name = self.folder_name.get()
-
-                    session_folder = os.path.join(folder, folder_name)
-                    os.makedirs(session_folder, exist_ok=True)
-
-                    # Create single log file and script copy
-                    logfile = os.path.join(session_folder, f"{material}_log_{self._timestamp}.txt")
-                    script_copy_path = os.path.join(session_folder, f"{material}_script_{self._timestamp}.py")
-                    shutil.copy2(__file__, script_copy_path)
-
-                    # Initialize log file
-                    with open(logfile, 'w') as lf:
-                        lf.write(f"Measurement Log - {self._timestamp}\n")
-                        lf.write(f"Material: {material}\n")
-                        lf.write(f"Max Field: {max_field} Oe\n")
-                        lf.write(f"Field Step: {step} Oe\n")
-                        lf.write(f"Field Rate: {rate} Oe/s\n")
-                        lf.write(f"Temperature Mode: {temp_mode}\n")
-                        if temp_mode == "single":
-                            lf.write(f"Temperature: {temp_points[0]} K\n")
-                        elif temp_mode == "list":
-                            lf.write(f"Temperatures: {', '.join(map(str, temp_points))} K\n")
-                        elif temp_mode == "sweep":
-                            lf.write(
-                                f"Temperature Range: {temp_points[0]}K to {temp_points[-1]}K, step {step_size}K\n")
-                        lf.write("\n")
-
-                    # Main measurement loop
                     for temp in temp_points:
                         # Set temperature
                         appr = client.temperature.approach_mode.fast_settle
                         print(f"\nSetting temperature to {temp} K...")
-                        with open(logfile, 'a') as lf:
-                            lf.write(f"Setting temperature to {temp} K...\n")
-
                         client.set_temperature(temp, temp_rate, appr)
+
                         client.wait_for(stabilize, 0, client.temperature.waitfor)
                         t_meas, _ = client.get_temperature()
                         print(f"Temperature stable at {t_meas:.2f} K")
-                        with open(logfile, 'a') as lf:
-                            lf.write(f"Temperature stable at {t_meas:.2f} K\n")
 
-                        # Create temperature-specific files for list/sweep modes
-                        if temp_mode in ["list", "sweep"]:
-                            # For list/sweep modes, allow manual customization with temperature appended
-                            base_data = os.path.splitext(self.data_file.get())[0]  # Remove extension
-                            base_plot = os.path.splitext(self.plot_file.get())[0]  # Remove extension
+                        # Create session folder
+                        try:
+                            # Use the already generated timestamp and material from the class
+                            material = self.material.get() or "material"
 
-                            # Get temperature string for filename
-                            temp_str = f"{t_meas:.1f}K".replace('.', 'p')  # Format for filename
+                            session_folder = os.path.join(folder,
+                                                          f"{material}_{max_field}Oe_{temp}K_{mode}_{freq}Hz_{volt}V_{self._timestamp}")
+                            os.makedirs(session_folder, exist_ok=True)
 
-                            # Create new filenames with temperature appended
-                            datafile = os.path.join(session_folder, f"{temp_str}_{base_data}.dat")
-                            plotfile = os.path.join(session_folder, f"{temp_str}_{base_plot}.png")
-
-                        else:
-                            # For single mode, use the original filenames
+                            # Set up file paths using the consistent naming pattern
                             datafile = os.path.join(session_folder, self.data_file.get())
                             plotfile = os.path.join(session_folder, self.plot_file.get())
+                            logfile = os.path.join(session_folder, f"{material}_log_{self._timestamp}.txt")
 
-                        # Clear previous data for this temperature
-                        self.fields = []
-                        self.caps = []
-                        self.ress = []
-                        self.temps = []
+                            # Save a copy of the script for reference with consistent naming
+                            script_copy_path = os.path.join(session_folder, f"{material}_script_{self._timestamp}.py")
+                            shutil.copy2(__file__, script_copy_path)
 
-                        # Initialize data file
-                        with open(datafile, "w", newline="") as f:
+                        except Exception as e:
+                            messagebox.showerror("Folder Error", f"Could not create session folder:\n{str(e)}")
+                            return
+
+                        # --- Begin Sweep ---
+                        with open(datafile, "w", newline="") as f, open(logfile, 'a') as lf:
                             writer = csv.writer(f, delimiter="\t")
-                            writer.writerow(
-                                ["Temperature (K)", "Field (Oe)", "Capacitance (F)", "Resistance (Ohm)"])
-
-                        # Field sweep at current temperature
-                        with open(datafile, "a", newline="") as f, open(logfile, 'a') as lf:
-                            writer = csv.writer(f, delimiter="\t")
-                            lf.write(f"Starting field sweep at {t_meas:.2f} K\n")
-                            lf.write(f"Data file: {os.path.basename(datafile)}\n")
-                            lf.write(f"Plot file: {os.path.basename(plotfile)}\n")
+                            writer.writerow(["Temperature (K)", "Field (Oe)", "Capacitance (F)", "Resistance (Ohm)"])
+                            lf.write("\nStarting measurements...\n")
 
                             for field in field_list:
                                 try:
@@ -717,7 +566,7 @@ class MeasurementGUI:
                                     lf.write(f"Setting field to {field} Oe... ")
                                     client.set_field(field, rate, client.field.approach_mode.linear)
                                     client.wait_for(0, 0, client.field.waitfor)
-                                    time.sleep(float(self.settle_time_magnetic.get()))
+                                    time.sleep(0.1)
                                     lf.write("Done\n")
 
                                     # Take measurement
@@ -731,8 +580,7 @@ class MeasurementGUI:
                                         lf.write(f"Measurement error: {str(e)}\n")
                                         continue
 
-                                    print(
-                                        f"B = {field} Oe | T = {t_meas:.2f} K | Cs = {Cs:.3e} F | Rs = {Rs:.2f} Ω")
+                                    print(f"B = {field} Oe | Cs = {Cs:.3e} F | Rs = {Rs:.2f} Ω")
                                     lf.write(f"Measurement: Cs={Cs:.3e} F, Rs={Rs:.2f} Ω\n")
 
                                     # Store data
@@ -755,27 +603,54 @@ class MeasurementGUI:
 
                                 except KeyboardInterrupt:
                                     print("\nMeasurement interrupted by user")
-                                    with open(logfile, 'a') as lf:
-                                        lf.write("\nMeasurement interrupted by user\n")
+                                    lf.write("\nMeasurement interrupted by user\n")
                                     raise
                                 except Exception as e:
                                     print(f"Error during measurement: {str(e)}")
-                                    with open(logfile, 'a') as lf:
-                                        lf.write(f"Error: {str(e)}\n")
+                                    lf.write(f"Error: {str(e)}\n")
                                     continue
 
-                        # Save plot for this temperature
-                        try:
-                            plt.savefig(plotfile)
-                            print(f"Data saved to: {datafile}")
-                            print(f"Plot saved to: {plotfile}")
-                            with open(logfile, 'a') as lf:
-                                lf.write(f"\nData saved to: {datafile}\n")
-                                lf.write(f"Plot saved to: {plotfile}\n")
-                        except Exception as e:
-                            print(f"Could not save plot: {str(e)}")
-                            with open(logfile, 'a') as lf:
-                                lf.write(f"Plot save failed: {str(e)}\n")
+                            try:
+                                plt.savefig(plotfile)
+                                print(f"Data saved to: {datafile}")
+                                print(f"Plot saved to: {plotfile}")
+                                print(f"Log saved to: {logfile}")
+                                with open(logfile, 'a') as lf:
+                                    lf.write(f"\nData saved to: {datafile}\n")
+                                    lf.write(f"Plot saved to: {plotfile}\n")
+                                    lf.write(f"Measurement completed at {datetime.now()}\n")
+                            except Exception as e:
+                                print(f"Could not save plot: {str(e)}")
+                                with open(logfile, 'a') as lf:
+                                    lf.write(f"Plot save failed: {str(e)}\n")
+
+                            except KeyboardInterrupt:
+                                print("\nMeasurement interrupted by user")
+                                lf.write("\nMeasurement interrupted by user\n")
+                                raise
+                            except Exception as e:
+                                print(f"Error during measurement: {str(e)}")
+                                lf.write(f"Error: {str(e)}\n")
+                                continue
+                    # temp_rate = float(self.temp_rate.get())
+                    # stabilize = int(self.stabilize_time.get())
+                    # appr = client.temperature.approach_mode.fast_settle
+                    # print(f"\nSetting temperature to {temp} K...")
+                    # client.set_temperature(temp, temp_rate, appr)
+                    #
+                    # client.wait_for(stabilize, 0, client.temperature.waitfor)
+                    # t_meas, _ = client.get_temperature()
+                    # print(f"Temperature stable at {t_meas:.2f} K")
+
+                except KeyboardInterrupt:
+                    print("\nMeasurement interrupted by user")
+                    with open(logfile, 'a') as lf:
+                        lf.write("\nMeasurement interrupted by user\n")
+                except Exception as e:
+                    print(f"\nMeasurement error: {str(e)}")
+                    with open(logfile, 'a') as lf:
+                        lf.write(f"\nMeasurement error: {str(e)}\n")
+                    messagebox.showerror("Error", f"Measurement failed:\n{str(e)}")
 
                 finally:
                     print("Closing instruments...")
@@ -836,17 +711,6 @@ class MeasurementGUI:
                             print(f"Could not return temperature: {str(e)}")
                             with open(logfile, 'a') as lf:
                                 lf.write(f"Temperature reset failed: {str(e)}\n")
-
-                        if self.lcr:
-                            try:
-                                self.lcr.close()
-                            except:
-                                pass
-                        if self.rm:
-                            try:
-                                self.rm.close()
-                            except:
-                                pass
 
                     plt.ioff()
                     plt.close()
