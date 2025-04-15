@@ -1,0 +1,6 @@
+Measurement Log - 20250414_185346
+Temperature: 300.0 K
+Max Field: 100 Oe
+Field Step: 100 Oe
+Field Rate: 100.0 Oe/s
+

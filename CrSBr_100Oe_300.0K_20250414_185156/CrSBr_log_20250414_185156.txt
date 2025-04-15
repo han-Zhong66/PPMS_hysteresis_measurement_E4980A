@@ -1,0 +1,32 @@
+Measurement Log - 20250414_185156
+Temperature: 300.0 K
+Max Field: 100 Oe
+Field Step: 100 Oe
+Field Rate: 100.0 Oe/s
+
+
+Starting measurements...
+Setting field to 0 Oe... Done
+Measurement: Cs=5.151e-10 F, Rs=284816000.00 Ω
+Setting field to -100 Oe... Done
+Measurement: Cs=-1.927e-10 F, Rs=-30823300.00 Ω
+Setting field to -100 Oe... Done
+Measurement: Cs=1.121e-10 F, Rs=5342600.00 Ω
+Setting field to 0 Oe... Done
+Measurement: Cs=4.560e-10 F, Rs=-4363990.00 Ω
+Setting field to 100 Oe... Done
+Measurement: Cs=7.126e-10 F, Rs=15444400.00 Ω
+Setting field to 100 Oe... Done
+Measurement: Cs=3.440e-10 F, Rs=-16608400.00 Ω
+Setting field to 0 Oe... Done
+Error: VI_ERROR_INP_PROT_VIOL (-1073807305): Device reported an input protocol error during transfer.
+Setting field to -100 Oe... Done
+Measurement: Cs=3.013e-10 F, Rs=-36596300.00 Ω
+
+Starting instrument cleanup...
+Field returned to 0 Oe
+Temperature returning to 300 K
+
+Data saved to: /Users/zhonghan/PycharmProjects/GUI/CrSBr_100Oe_300.0K_20250414_185156/CrSBr_data_20250414_185156.dat
+Plot saved to: /Users/zhonghan/PycharmProjects/GUI/CrSBr_100Oe_300.0K_20250414_185156/CrSBr_plot_20250414_185156.png
+Measurement completed at 2025-04-14 18:53:08.659941

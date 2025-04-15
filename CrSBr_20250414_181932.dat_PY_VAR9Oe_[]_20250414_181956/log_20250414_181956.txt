@@ -1,0 +1,100 @@
+Measurement Log - 20250414_181956
+Temperature: 300.0 K
+Max Field: 1000 Oe
+Field Step: 100 Oe
+Field Rate: 100.0 Oe/s
+
+
+Starting measurements...
+Setting field to 1000 Oe... Done
+Measurement: Cs=1.370e-09 F, Rs=-20065500.00 Ω
+Setting field to 1000 Oe... Done
+Measurement: Cs=5.797e-10 F, Rs=-24837200.00 Ω
+Setting field to 900 Oe... Done
+Measurement: Cs=-3.698e-10 F, Rs=-45149600.00 Ω
+Setting field to 800 Oe... Done
+Measurement: Cs=6.102e-11 F, Rs=11355500.00 Ω
+Setting field to 700 Oe... Done
+Measurement: Cs=1.739e-10 F, Rs=-25883300.00 Ω
+Setting field to 600 Oe... Done
+Measurement: Cs=-2.607e-10 F, Rs=-39230300.00 Ω
+Setting field to 500 Oe... Done
+Error: VI_ERROR_INP_PROT_VIOL (-1073807305): Device reported an input protocol error during transfer.
+Setting field to 400 Oe... Done
+Measurement: Cs=4.578e-09 F, Rs=46116100.00 Ω
+Setting field to 300 Oe... Done
+Measurement: Cs=2.804e-09 F, Rs=-24633300.00 Ω
+Setting field to 200 Oe... Done
+Measurement: Cs=6.899e-11 F, Rs=-42601900.00 Ω
+Setting field to 100 Oe... Done
+Measurement: Cs=4.406e-10 F, Rs=9978500.00 Ω
+Setting field to 0 Oe... Done
+Measurement: Cs=2.449e-10 F, Rs=4203820.00 Ω
+Setting field to -100 Oe... Done
+Measurement: Cs=-4.225e-10 F, Rs=30700100.00 Ω
+Setting field to -200 Oe... Done
+Measurement: Cs=-3.854e-10 F, Rs=-318477000.00 Ω
+Setting field to -300 Oe... Done
+Measurement: Cs=-1.309e-09 F, Rs=-25303800.00 Ω
+Setting field to -400 Oe... Done
+Measurement: Cs=9.325e-11 F, Rs=35836700.00 Ω
+Setting field to -500 Oe... Done
+Measurement: Cs=-1.717e-10 F, Rs=-87677500.00 Ω
+Setting field to -600 Oe... Done
+Measurement: Cs=2.564e-10 F, Rs=-254562.00 Ω
+Setting field to -700 Oe... Done
+Measurement: Cs=2.653e-10 F, Rs=12114700.00 Ω
+Setting field to -800 Oe... Done
+Measurement: Cs=4.479e-10 F, Rs=1935890.00 Ω
+Setting field to -900 Oe... Done
+Measurement: Cs=5.037e-10 F, Rs=-6193270.00 Ω
+Setting field to -1000 Oe... Done
+Measurement: Cs=1.256e-10 F, Rs=-30495900.00 Ω
+Setting field to -1000 Oe... Done
+Measurement: Cs=2.603e-10 F, Rs=-20801600.00 Ω
+Setting field to -900 Oe... Done
+Measurement: Cs=1.771e-10 F, Rs=-58968100.00 Ω
+Setting field to -800 Oe... Done
+Measurement: Cs=3.416e-10 F, Rs=-31181800.00 Ω
+Setting field to -700 Oe... Done
+Measurement: Cs=3.754e-10 F, Rs=-341274.00 Ω
+Setting field to -600 Oe... Done
+Measurement: Cs=8.136e-10 F, Rs=-35951400.00 Ω
+Setting field to -500 Oe... Done
+Measurement: Cs=3.511e-10 F, Rs=21333100.00 Ω
+Setting field to -400 Oe... Done
+Measurement: Cs=2.159e-10 F, Rs=-22322100.00 Ω
+Setting field to -300 Oe... Done
+Measurement: Cs=-2.685e-09 F, Rs=-22153500.00 Ω
+Setting field to -200 Oe... Done
+Measurement: Cs=1.925e-10 F, Rs=-9417700.00 Ω
+Setting field to -100 Oe... Done
+Measurement: Cs=-3.530e-10 F, Rs=-49160000.00 Ω
+Setting field to 0 Oe... Done
+Measurement: Cs=5.955e-10 F, Rs=-10612200.00 Ω
+Setting field to 100 Oe... Done
+Measurement: Cs=2.892e-10 F, Rs=67579400.00 Ω
+Setting field to 200 Oe... Done
+Measurement: Cs=4.716e-10 F, Rs=7815970.00 Ω
+Setting field to 300 Oe... Done
+Measurement: Cs=4.501e-10 F, Rs=-10401100.00 Ω
+Setting field to 400 Oe... Done
+Measurement: Cs=3.931e-10 F, Rs=3318610.00 Ω
+Setting field to 500 Oe... Done
+Measurement: Cs=3.121e-10 F, Rs=34345300.00 Ω
+Setting field to 600 Oe... Done
+Measurement: Cs=4.546e-10 F, Rs=19881000.00 Ω
+Setting field to 700 Oe... Done
+Measurement: Cs=-7.648e-10 F, Rs=32080700.00 Ω
+Setting field to 800 Oe... Done
+Measurement: Cs=-2.269e-08 F, Rs=-17214600.00 Ω
+Setting field to 900 Oe... Done
+Measurement: Cs=1.498e-10 F, Rs=5191860.00 Ω
+Setting field to 1000 Oe... Done
+Measurement: Cs=3.464e-10 F, Rs=4163430.00 Ω
+
+Starting instrument cleanup...
+
+Data saved to: /Users/zhonghan/PycharmProjects/GUI/CrSBr_20250414_181932.dat_PY_VAR9Oe_[]_20250414_181956/data_CrSBr_20250414_181932.dat_20250414_181956.dat
+Plot saved to: /Users/zhonghan/PycharmProjects/GUI/CrSBr_20250414_181932.dat_PY_VAR9Oe_[]_20250414_181956/data_CrSBr_20250414_181932.png_20250414_181956.png
+Measurement completed at 2025-04-14 18:24:46.286651
